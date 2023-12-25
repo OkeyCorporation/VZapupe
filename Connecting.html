@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VZapupe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+        body {
+            background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        #giantText {
+            font-size: 4em; /* Размер текста VZ */
+            margin-top: 0vh; /* Отступ сверху */
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        /* Стили для input[type="file"] */
+        .file-input {
+            display: none; /* Скрыть нативный input[type="file"] */
+        }
+
+        h3 {
+            font-family: 'Sans-serif', sans-serif;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #giantText {
+                font-size: 2em; /* Уменьшаем размер текста на маленьких экранах */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="giantText">@Connecting@</div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById("giantText").innerHTML = "Вы законектиды с: " + getRandomName();
+            setTimeout(function() {
+                window.location.href = "chat.html";
+            }, 3000);
+        }, 3000);
+
+        function getRandomName() {
+            // Здесь можно добавить код для получения рандомного имени
+            // Например, массив имен и выбор случайного из них
+            var names = ["Иван", "Александр", "Михаил", "Дмитрий", "Егор"];
+            return names[Math.floor(Math.random() * names.length)];
+        }
+    </script>
+    <!-- Добавьте свой контент здесь -->
+</body>
+</html>
